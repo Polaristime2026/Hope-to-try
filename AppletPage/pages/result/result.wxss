@@ -1,0 +1,16 @@
+.result-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 30rpx;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.result-text {
+  font-size: 32rpx;
+  color: #333;
+  line-height: 1.6;
+  word-break: break-word;
+}

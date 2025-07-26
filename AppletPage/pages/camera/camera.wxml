@@ -1,0 +1,22 @@
+<!-- 摄像头预览（未拍照时显示） -->
+<camera wx:if="{{!photoTaken}}" device-position="back" flash="off" style="width: 100%; height: 85vh;" id="camera" />
+
+<!-- 拍下的照片 -->
+<image wx:if="{{photoTaken}}" src="{{photoPath}}" mode="aspectFill" class="photo-preview" />
+
+<!-- 扫描线动画，仅在扫描中显示，放在图像后面 -->
+<view wx:if="{{scanning}}" class="scan-line"></view>
+
+<!-- 拍照按钮（未拍照且未扫描时） -->
+<view class="snap-area" wx:if="{{!photoTaken && !scanning}}">
+  <view class="snap-btn" bindtap="takePhoto"></view>
+</view>
+<!-- 取消按钮 -->
+<view wx:if="{{photoTaken && !scanning}}" class="photo-action cancel" bindtap="retakePhoto">✕</view>
+
+<!-- 确认按钮 -->
+<view wx:if="{{photoTaken && !scanning}}" class="photo-action confirm" bindtap="confirmPhoto">✔</view>
+
+
+<!-- 返回 -->
+<view class="close-icon" bindtap="goBack">✕</view>

@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/camera/camera",
+    "pages/result/result"
+  ],
+  "window": {
+    "navigationBarTitleText": "汉语翻译盲文",
+    "navigationBarBackgroundColor": "#ffffff"
+  }
+}

@@ -1,0 +1,14 @@
+<view class="container">
+  <text class="title">汉语翻译盲文</text>
+  <textarea bindinput="onInput" placeholder="请输入文字..." class="input-box"></textarea>
+
+  <view class="button-row">
+  <button bindtap="translateText" class="translate-btn">翻译</button>
+  <view bindtap="goToCamera" class="camera-btn">
+    <image src="/assets/camera-icon.png" class="camera-icon" />
+    <text class="camera-text">拍照翻译</text>
+  </view>
+</view>
+  <textarea disabled value="{{translatedText}}" class="output-box"></textarea>
+</view>
+
