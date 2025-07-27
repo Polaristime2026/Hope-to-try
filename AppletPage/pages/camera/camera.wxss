@@ -1,0 +1,112 @@
+.close-icon {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  font-size: 26px;
+  color: white;
+  z-index: 99; /* 一定高于 photo 和 scan */
+}
+
+.snap-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 15vh; /* 控制白色区域高度 */
+  background-color: rgb(241, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.snap-btn {
+  width: 64px;
+  height: 64px;
+  background-color: rgb(49, 42, 49);
+  border-radius: 50%;
+}
+.photo-preview {
+  width: 100%;
+  height: 85vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10; /* 不要太高，避免挡住按钮 */
+  object-fit: cover;
+}
+/* 扫描白线 */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(131, 123, 123);
+  opacity: 0.8;
+  z-index: 10;
+  animation: scan-down 1.5s ease-in-out infinite alternate;
+}
+
+/* 扫描动画：从上到下往复 */
+@keyframes scan-down {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 85vh;
+  }
+}
+
+
+.action-buttons {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 32rpx;
+  z-index: 100;
+}
+
+.action-button {
+  padding: 0 24rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 100rpx;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100rpx;
+}
+
+.photo-action {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  bottom: 40px;
+}
+
+.photo-action.cancel {
+  left: 60px;
+  background-color: #f44336;
+}
+
+.photo-action.confirm {
+  right: 60px;
+  background-color: #4caf50;
+}
+
+
